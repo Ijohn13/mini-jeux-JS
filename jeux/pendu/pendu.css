@@ -1,0 +1,124 @@
+body{
+    background-color: #330000;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23D18'/%3E%3Cstop offset='1' stop-color='%23330000'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FA3' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FA3' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+main {
+    max-width: 500px;
+    margin: auto;
+}
+
+#containerCenter {
+    display: flex;
+    justify-content: center;
+}
+
+#containerLienList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#containerTitle, #containerBtnCptImg, #containerWordKeyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2 {
+    color: white;
+    font-size: 3rem;
+}
+
+#startGame {
+    width: 100px;
+    font-size: 1.5rem;
+}
+
+#cptErreur {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+}
+
+#wordToFindDiv {
+    background-image: radial-gradient(circle at center right, rgb(138, 138, 138),rgb(251, 251, 251));
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+#keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    width: 700px;
+}
+
+#keyboard .letterKeyboard {
+    padding: 30px;
+    border: 1px solid black;
+    margin: 2px;
+    font-size: 2rem;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+}
+
+.letterKeyboard {
+    background-image: radial-gradient(circle at center right, rgb(138, 138, 138),rgb(251, 251, 251));
+    border-radius: 5px;
+}
+
+#imagePendu {
+    background: url("img/pendu.jpeg");
+    width: 130px;
+    height: 140px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#imagePendu.etat0 {
+    background-position: -20px -55px;
+}
+
+#imagePendu.etat1 {
+    background-position: -220PX -55px;
+}
+
+#imagePendu.etat2 {
+    background-position: -410px -55px;
+}
+
+#imagePendu.etat3 {
+    background-position: -20px -250px;
+}
+
+#imagePendu.etat4 {
+    background-position: -220px -250px;
+}
+
+.letterKeyboard, #imagePendu, #wordToFindDiv {
+    box-shadow:
+        1.1px 2.5px 16.4px rgba(0, 0, 0, 0.033),
+        2.3px 5.4px 27.4px rgba(0, 0, 0, 0.042),
+        3.8px 8.8px 34.5px rgba(0, 0, 0, 0.046),
+        5.9px 13.5px 39.5px rgba(0, 0, 0, 0.049),
+        9.2px 21.2px 44.6px rgba(0, 0, 0, 0.052),
+        16.1px 36.9px 53.8px rgba(0, 0, 0, 0.056),
+        83px 190px 80px rgba(0, 0, 0, 0.07);
+}

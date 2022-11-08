@@ -91,7 +91,7 @@ function endGame(winner) {
     }
     else {
         resultDiv.style.display = 'block';
-        resultDiv.innerHTML = `Cest perdu !!\n T'es une merde Jack !!!`
+        resultDiv.innerHTML = `Cest perdu !!\n Dans le cul lulu !!!`
     }
     gamePropalDiv.style.display = 'none';
     clearInterval(compteurInterval);

@@ -219,3 +219,8 @@ a svg {
 .badAnswer {
     color: red;
 }
+
+fieldset {
+    margin-top: 10px;
+    width: 400px;
+}

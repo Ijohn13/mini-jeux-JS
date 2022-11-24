@@ -30,11 +30,11 @@ function checkPropal() {
     if(propalInput.value == calculEnCours.result) {
         messengerDiv.innerHTML = '<span>Bravo tu as trouvé !!</span><br>';
         cptGoodAnswer++;
-        allCalculRecap += `${calculEnCours.showCalculWithResult} || <span class="goodAnswer">${propalInput.value}</span><br>`;
+        allCalculRecap += `${calculEnCours.showCalculWithResult} || <span class="goodAnswer myAnswer">${propalInput.value}</span><br>`;
     } else {
         messengerDiv.innerHTML =`<span>Ce n'est pas ça !!</span><br>`;
         cptBadAnswer++;
-        allCalculRecap += `${calculEnCours.showCalculWithResult} || <span class="badAnswer">${propalInput.value}</span><br>`;
+        allCalculRecap += `${calculEnCours.showCalculWithResult} || <span class="badAnswer myAnswer">${propalInput.value}</span><br>`;
     }
     propalInput.value = "";
     generateCalcul();
@@ -67,6 +67,7 @@ function lancerMinuteur(tempsMinuteurBase) {
         tempsRestant --;
         reboursDiv.innerHTML = tempsRestant;
         if(tempsRestant == 0) {
+            messengerDiv.innerHTML = "";
             clearInterval(compteurInterval);
             displayPlayingDiv(false);
             // messengerDiv.innerHTML = "";

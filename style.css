@@ -5,16 +5,42 @@ html, body {
 }
 
 body {
-    background-color: #ffff00;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ff8000'/%3E%3Cstop offset='1' stop-color='%23ff8000' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2300ff19'/%3E%3Cstop offset='1' stop-color='%2300ff19' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%239900ff'/%3E%3Cstop offset='1' stop-color='%239900ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffff00'/%3E%3Cstop offset='1' stop-color='%23ffff00' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FF0000'/%3E%3Cstop offset='1' stop-color='%23FF0000' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%230CF'/%3E%3Cstop offset='1' stop-color='%230CF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
-    background-attachment: fixed;
-    background-size: cover;
+    background-image: radial-gradient(circle at center center, transparent 0%,rgb(0,0,0) 85%),linear-gradient(78deg, rgba(192, 192, 192,0.05) 0%, rgba(192, 192, 192,0.05) 50%,rgba(60, 60, 60,0.05) 50%, rgba(60, 60, 60,0.05) 100%),linear-gradient(227deg, rgba(97, 97, 97,0.05) 0%, rgba(97, 97, 97,0.05) 50%,rgba(52, 52, 52,0.05) 50%, rgba(52, 52, 52,0.05) 100%),linear-gradient(240deg, rgba(98, 98, 98,0.05) 0%, rgba(98, 98, 98,0.05) 50%,rgba(249, 249, 249,0.05) 50%, rgba(249, 249, 249,0.05) 100%),linear-gradient(187deg, rgba(1, 1, 1,0.05) 0%, rgba(1, 1, 1,0.05) 50%,rgba(202, 202, 202,0.05) 50%, rgba(202, 202, 202,0.05) 100%),linear-gradient(101deg, rgba(61, 61, 61,0.05) 0%, rgba(61, 61, 61,0.05) 50%,rgba(254, 254, 254,0.05) 50%, rgba(254, 254, 254,0.05) 100%),linear-gradient(176deg, rgba(237, 237, 237,0.05) 0%, rgba(237, 237, 237,0.05) 50%,rgba(147, 147, 147,0.05) 50%, rgba(147, 147, 147,0.05) 100%),linear-gradient(304deg, rgba(183, 183, 183,0.05) 0%, rgba(183, 183, 183,0.05) 50%,rgba(57, 57, 57,0.05) 50%, rgba(57, 57, 57,0.05) 100%),radial-gradient(circle at center center, hsl(351,4%,12%),hsl(351,4%,12%));
 }
 
-h1 {
+.ml1 {
+    font-weight: 900;
+    font-size: 4em;
     text-align: center;
-    font-size: 5rem;
+    margin-top: 200px;
 }
+
+.ml1 .letters {
+    display: inline-block;
+    line-height: 1em;
+    color: white;
+}
+
+.ml1 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.1em;
+    padding-right: 0.05em;
+    padding-bottom: 0.15em;
+}
+
+.ml1 .line {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    transform-origin: 0 0;
+}
+
+.ml1 .line1 { top: 0; }
+.ml1 .line2 { bottom: 0; }
 
 #container {
     display: flex;
@@ -26,38 +52,82 @@ h1 {
     border-radius: 15px;
 }
 
-.card {
-    margin-right: 20px;
-    border-radius: 20px;
-    background: white;
+.container-carousel {
+    position: relative;
+    width: 320px;
+    margin: 100px auto 0 auto;
+    perspective: 1000px;
+}
+
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate360 60s infinite forwards linear;
+}
+
+.image {
+    position: absolute;
     width: 300px;
-    height: 300px;
-    box-shadow:
-        -1.3px -1.3px 13.8px rgba(0, 0, 0, 0.032),
-        -2.1px -2.1px 33.3px rgba(0, 0, 0, 0.04),
-        -0.5px -0.5px 62.6px rgba(0, 0, 0, 0.045),
-        8.8px 8.8px 111.7px rgba(0, 0, 0, 0.049),
-        39.1px 39.1px 208.9px rgba(0, 0, 0, 0.054),
-        100px 100px 500px rgba(0, 0, 0, 0.07);
+    height: 187px;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    /* box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
 
-img {
-    border-radius: 20px;
-    width: 300px;
-    height: 300px;
+.spanCarousel {
+    margin: auto;
+    font-size: 2rem;
+    color: white;
 }
 
-/* #justePrix {
-    background: url('./img/justePrix.jpeg');
-    background-position: center;
+a {
+    width: 100%;
+    height: 100%;
 }
 
-#pendu {
-    background: url('./img/hangman.jpeg');
-} */
+@keyframes rotate360 {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(-360deg);
+    }
+}
 
-/* a {
-    text-decoration: none;
-    font-size: 2.5rem;
-    color: darkslategrey;
-} */
+.image:nth-child(1){
+    background-image: url("./img/justePrix.jpeg");
+    transform: rotateY(0deg) translateZ(430px);
+}
+
+.image:nth-child(2){
+    background-image: url("./img/hangman.jpeg");
+    transform: rotateY(60deg) translateZ(430px);
+}
+
+.image:nth-child(3){
+    background-image: url("./img/csm_Challenge_Calcul_Mental_logo_8af46c0ada.jpeg");
+    transform: rotateY(120deg) translateZ(430px);
+}
+
+.image:nth-child(4){
+    background-image: url("./img/téléchargement.png");
+    transform: rotateY(180deg) translateZ(430px);
+}
+
+.image:nth-child(5){
+    background-image: url("./img/téléchargement.png");
+    transform: rotateY(240deg) translateZ(430px);
+}
+
+.image:nth-child(6){
+    background-image: url("./img/téléchargement.png");
+    transform: rotateY(300deg) translateZ(430px);
+}

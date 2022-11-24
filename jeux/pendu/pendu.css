@@ -33,14 +33,45 @@ main {
     align-items: center;
 }
 
-h1, h2 {
+.ml10 {
+    position: relative;
+    font-weight: 900;
+    font-size: 3.5em;
     color: white;
-    font-size: 3rem;
+}
+
+.ml10 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+}
+
+.ml10 .letter {
+    display: inline-block;
+    line-height: 1em;
+    transform-origin: 0 0;
+}
+
+.ml12 {
+    font-weight: 200;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    color: white;
+}
+
+.ml12 .letter {
+    display: inline-block;
+    line-height: 1em;
 }
 
 #startGame {
-    width: 100px;
+    width: 200px;
     font-size: 1.5rem;
+    border-radius: 5px;
 }
 
 #cptErreur {
